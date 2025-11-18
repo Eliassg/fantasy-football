@@ -1,0 +1,62 @@
+space: fantasy_football
+externalId: Player
+version: "1"
+name: Player
+description: FPL players with their stats and performance
+properties:
+  playerId:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: playerId
+  webName:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: webName
+  firstName:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: firstName
+  lastName:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: lastName
+  team:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: team
+  position:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: position
+  currentPrice:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: currentPrice
+  totalPoints:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: totalPoints
+  form:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: form
+  selectedByPercent:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: selectedByPercent
+  pointsPerGame:
+    container:
+      space: fantasy_football
+      externalId: Player
+    containerPropertyIdentifier: pointsPerGame
+

@@ -1,0 +1,57 @@
+space: fantasy_football
+externalId: Transfer
+version: "1"
+name: Transfer
+description: Manager transfers with success metrics
+properties:
+  manager:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: manager
+  gameweek:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: gameweek
+  playerIn:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: playerIn
+  playerOut:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: playerOut
+  transferCost:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: transferCost
+  playerInPrice:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: playerInPrice
+  playerOutPrice:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: playerOutPrice
+  pointsGainedNext3GW:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: pointsGainedNext3GW
+  wasSuccessful:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: wasSuccessful
+  netBenefit:
+    container:
+      space: fantasy_football
+      externalId: Transfer
+    containerPropertyIdentifier: netBenefit
+

@@ -1,0 +1,8 @@
+externalId: ds_fantasy_football
+name: Fantasy Football Data
+description: Dataset containing all Fantasy Premier League data
+metadata:
+  source: Fantasy Premier League API
+  update_frequency: daily
+writeProtected: false
+

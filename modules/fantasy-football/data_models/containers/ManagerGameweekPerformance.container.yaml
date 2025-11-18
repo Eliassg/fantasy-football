@@ -1,0 +1,73 @@
+space: fantasy_football
+externalId: ManagerGameweekPerformance
+name: Manager Gameweek Performance
+description: Manager performance per gameweek
+usedFor: node
+properties:
+  manager:
+    type:
+      type: direct
+      list: false
+      container:
+        space: fantasy_football
+        externalId: Manager
+    nullable: true
+    description: Manager
+  gameweek:
+    type:
+      type: direct
+      list: false
+      container:
+        space: fantasy_football
+        externalId: Gameweek
+    nullable: true
+    description: Gameweek
+  points:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Points scored this gameweek
+  totalPoints:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Cumulative total points
+  rank:
+    type:
+      type: int64
+      list: false
+    nullable: true
+    description: Overall rank after this gameweek
+  gameweekRank:
+    type:
+      type: int64
+      list: false
+    nullable: true
+    description: Rank in this specific gameweek
+  transfers:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Number of transfers made
+  transferCost:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Points deducted for transfers
+  bank:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Money in bank (£m)
+  teamValue:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Team value at this gameweek (£m)
+

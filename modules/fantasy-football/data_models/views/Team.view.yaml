@@ -1,0 +1,27 @@
+space: fantasy_football
+externalId: Team
+version: "1"
+name: Team
+description: Premier League teams
+properties:
+  teamId:
+    container:
+      space: fantasy_football
+      externalId: Team
+    containerPropertyIdentifier: teamId
+  name:
+    container:
+      space: fantasy_football
+      externalId: Team
+    containerPropertyIdentifier: name
+  shortName:
+    container:
+      space: fantasy_football
+      externalId: Team
+    containerPropertyIdentifier: shortName
+  strength:
+    container:
+      space: fantasy_football
+      externalId: Team
+    containerPropertyIdentifier: strength
+

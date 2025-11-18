@@ -1,0 +1,8 @@
+environment:
+  name: prod
+  project: sofie-prod
+  validation-type: dev
+  selected:
+    - modules/fantasy-football
+  variables:
+    fpl_league_id: "sl9tyc"  # Hangover Hamre

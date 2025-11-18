@@ -1,0 +1,83 @@
+space: fantasy_football
+externalId: Player
+name: Player
+description: FPL Player with stats and performance
+usedFor: node
+properties:
+  playerId:
+    type:
+      type: int32
+      list: false
+    nullable: false
+    name: Player ID
+    description: FPL player ID
+  webName:
+    type:
+      type: text
+      list: false
+    nullable: false
+    name: Web Name
+    description: Player's display name in FPL
+  firstName:
+    type:
+      type: text
+      list: false
+    nullable: true
+    name: First Name
+  lastName:
+    type:
+      type: text
+      list: false
+    nullable: true
+    name: Last Name
+  team:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Team
+    nullable: true
+    name: Team
+    description: Premier League team the player belongs to
+  position:
+    type:
+      type: text
+      list: false
+    nullable: true
+    name: Position
+    description: Player position (GK, DEF, MID, FWD)
+  currentPrice:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Current Price
+    description: Current FPL price in millions
+  totalPoints:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Total Points
+    description: Total FPL points this season
+  form:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Form
+    description: Recent form score
+  selectedByPercent:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Selected By %
+    description: Percentage of teams that own this player
+  pointsPerGame:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Points Per Game
+    description: Average points per game
+

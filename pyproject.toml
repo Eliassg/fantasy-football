@@ -1,0 +1,82 @@
+[tool.poetry]
+name = "fantasy-football"
+version = "0.1.0"
+description = "Toolkit project for fantasy premier league"
+authors = ["Sofie Ytterstad <sofie.ytterstad@cognite.com>"]
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.14"
+
+# Cognite ecosystem
+cognite-sdk = "*"
+cognite-toolkit = "0.6.23"
+cognite-pygen = "*"
+
+# Data Engineering essentials
+pandas = "*"
+numpy = "*"
+openpyxl = "*"
+orjson = "*"
+
+# Developer tools
+python-dotenv = "*"
+pydantic = "*"
+pydantic-settings = "*"
+typer = "*"
+arrow = "*"
+requests = "*"
+httpx = "*"
+
+# Visualization & App building
+matplotlib = "*"
+seaborn = "*"
+plotly = "*"
+
+# Streamlit
+streamlit = "*"
+
+# Retry / Resilience
+tenacity = "*"
+
+# ML / AI Essentials
+scikit-learn = "*"
+xgboost = "*"
+tqdm = "*"
+joblib = "*"
+
+# Optional cache handling (useful for APIs)
+cachetools = "*"
+fastapi = "^0.116.1"
+uvicorn = "^0.35.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "*"
+ruff = "*"
+pytest = "*"
+pytest-cov = "*"
+faker = "*"
+mypy = "*"
+notebook = "*"
+ipykernel = "*"
+types-requests = "*"
+types-python-dateutil = "*"
+types-pyyaml = "*"
+
+[tool.isort]
+profile = "black"
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "ANN", "UP", "S"]
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]  # Allow 'assert' in tests
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

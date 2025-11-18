@@ -1,0 +1,77 @@
+space: fantasy_football
+externalId: Manager
+version: "1"
+name: Manager
+description: FPL managers in your league
+properties:
+  entryId:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: entryId
+  managerName:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: managerName
+  teamName:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: teamName
+  overallPoints:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: overallPoints
+  overallRank:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: overallRank
+  leagueRank:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: leagueRank
+  teamValue:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: teamValue
+  consistencyScore:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: consistencyScore
+  averagePointsPerWeek:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: averagePointsPerWeek
+  pointsStdDev:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: pointsStdDev
+  transferSuccessRate:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: transferSuccessRate
+  totalTransfers:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: totalTransfers
+  successfulTransfers:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: successfulTransfers
+  teamValueGrowth:
+    container:
+      space: fantasy_football
+      externalId: Manager
+    containerPropertyIdentifier: teamValueGrowth
+

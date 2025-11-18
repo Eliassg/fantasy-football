@@ -1,0 +1,65 @@
+space: fantasy_football
+externalId: ManagerTeamBetting
+name: ManagerTeamBetting
+description: Tracks which Premier League teams a manager picks players from and their success rate
+usedFor: node
+properties:
+  manager:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Manager
+    nullable: true
+    name: Manager
+    description: The FPL manager
+  team:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Team
+    nullable: true
+    name: Team
+    description: Premier League team
+  totalPlayersUsed:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Total Players Used
+    description: Total number of players from this team used across all gameweeks
+  totalPoints:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Total Points
+    description: Total points scored by players from this team
+  averagePointsPerPlayer:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Average Points Per Player
+    description: Average points per player from this team
+  successRate:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Success Rate
+    description: Percentage of gameweeks where this team's players performed above average
+  investmentValue:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Investment Value
+    description: Total money spent on players from this team
+  returnOnInvestment:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Return On Investment
+    description: Points per million spent on this team's players
+

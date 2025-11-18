@@ -1,0 +1,91 @@
+space: fantasy_football
+externalId: Manager
+name: Manager
+description: FPL managers in your league
+usedFor: node
+properties:
+  entryId:
+    type:
+      type: int64
+      list: false
+    nullable: false
+    description: FPL entry ID
+  managerName:
+    type:
+      type: text
+      list: false
+    nullable: false
+    description: Manager's name
+  teamName:
+    type:
+      type: text
+      list: false
+    nullable: false
+    description: Fantasy team name
+  overallPoints:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Total points this season
+  overallRank:
+    type:
+      type: int64
+      list: false
+    nullable: true
+    description: Overall rank globally
+  leagueRank:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Rank in your league
+  teamValue:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Current team value (£m)
+  consistencyScore:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Score from 0-100 measuring how consistent weekly points are (lower std dev = higher score)
+  averagePointsPerWeek:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Average points per gameweek
+  pointsStdDev:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Standard deviation of weekly points (lower = more consistent)
+  transferSuccessRate:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Percentage of transfers that were successful (gained more than they cost)
+  totalTransfers:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Total number of transfers made
+  successfulTransfers:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Number of successful transfers
+  teamValueGrowth:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    description: Team value growth since start of season (£m)
+

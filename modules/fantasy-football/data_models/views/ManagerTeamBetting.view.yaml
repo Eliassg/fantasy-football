@@ -1,0 +1,47 @@
+space: fantasy_football
+externalId: ManagerTeamBetting
+version: "1"
+name: ManagerTeamBetting
+description: Tracks which Premier League teams a manager is good at picking players from
+properties:
+  manager:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: manager
+  team:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: team
+  totalPlayersUsed:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: totalPlayersUsed
+  totalPoints:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: totalPoints
+  averagePointsPerPlayer:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: averagePointsPerPlayer
+  successRate:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: successRate
+  investmentValue:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: investmentValue
+  returnOnInvestment:
+    container:
+      space: fantasy_football
+      externalId: ManagerTeamBetting
+    containerPropertyIdentifier: returnOnInvestment
+

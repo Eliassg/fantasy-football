@@ -1,0 +1,31 @@
+space: fantasy_football
+externalId: Team
+name: Team
+description: Premier League teams
+usedFor: node
+properties:
+  teamId:
+    type:
+      type: int32
+      list: false
+    nullable: false
+    description: FPL team ID
+  name:
+    type:
+      type: text
+      list: false
+    nullable: false
+    description: Team name
+  shortName:
+    type:
+      type: text
+      list: false
+    nullable: true
+    description: Short name (3 letters)
+  strength:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Overall team strength
+

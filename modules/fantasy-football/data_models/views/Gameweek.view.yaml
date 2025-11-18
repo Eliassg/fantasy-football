@@ -1,0 +1,42 @@
+space: fantasy_football
+externalId: Gameweek
+version: "1"
+name: Gameweek
+description: Premier League gameweeks
+properties:
+  gameweekNumber:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: gameweekNumber
+  name:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: name
+  deadlineTime:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: deadlineTime
+  isFinished:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: isFinished
+  isCurrent:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: isCurrent
+  averageScore:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: averageScore
+  highestScore:
+    container:
+      space: fantasy_football
+      externalId: Gameweek
+    containerPropertyIdentifier: highestScore
+

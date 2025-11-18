@@ -1,0 +1,12 @@
+externalId: fpl_data_ingestion
+name: FPL Data Ingestion
+description: Fetch data from Fantasy Premier League API and load into RAW tables
+owner: Fantasy Football Team
+runtime: py311
+cpu: 0.25
+memory: 1.0
+envVars:
+  FPL_LEAGUE_ID: "{{fpl_league_id}}"
+metadata:
+  version: "1.0.0"
+

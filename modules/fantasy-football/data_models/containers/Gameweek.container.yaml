@@ -1,0 +1,49 @@
+space: fantasy_football
+externalId: Gameweek
+name: Gameweek
+description: Premier League gameweeks/rounds
+usedFor: node
+properties:
+  gameweekNumber:
+    type:
+      type: int32
+      list: false
+    nullable: false
+    description: Gameweek number (1-38)
+  name:
+    type:
+      type: text
+      list: false
+    nullable: true
+    description: Gameweek name
+  deadlineTime:
+    type:
+      type: timestamp
+      list: false
+    nullable: true
+    description: Deadline for transfers
+  isFinished:
+    type:
+      type: boolean
+      list: false
+    nullable: true
+    description: Whether gameweek is finished
+  isCurrent:
+    type:
+      type: boolean
+      list: false
+    nullable: true
+    description: Whether gameweek is current
+  averageScore:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Average score across all FPL managers
+  highestScore:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    description: Highest score in this gameweek
+

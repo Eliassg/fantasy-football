@@ -1,0 +1,81 @@
+space: fantasy_football
+externalId: Transfer
+name: Transfer
+description: Manager transfers with success analysis
+usedFor: node
+properties:
+  manager:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Manager
+    nullable: true
+    name: Manager
+    description: Manager who made the transfer
+  gameweek:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Gameweek
+    nullable: true
+    name: Gameweek
+    description: Gameweek when transfer was made
+  playerIn:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Player
+    nullable: true
+    name: Player In
+    description: Player transferred in
+  playerOut:
+    type:
+      type: direct
+      space: fantasy_football
+      externalId: Player
+    nullable: true
+    name: Player Out
+    description: Player transferred out
+  transferCost:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Transfer Cost
+    description: Points cost for the transfer (usually 4 or 0)
+  playerInPrice:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Player In Price
+    description: Price of player transferred in
+  playerOutPrice:
+    type:
+      type: float64
+      list: false
+    nullable: true
+    name: Player Out Price
+    description: Price of player transferred out
+  pointsGainedNext3GW:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Points Gained (Next 3 GW)
+    description: Difference in points between player in vs player out over next 3 gameweeks
+  wasSuccessful:
+    type:
+      type: boolean
+      list: false
+    nullable: true
+    name: Was Successful
+    description: True if transfer gained more points than it cost
+  netBenefit:
+    type:
+      type: int32
+      list: false
+    nullable: true
+    name: Net Benefit
+    description: Points gained minus transfer cost
+

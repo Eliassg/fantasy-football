@@ -1,0 +1,57 @@
+space: fantasy_football
+externalId: ManagerGameweekPerformance
+version: "1"
+name: Manager Gameweek Performance
+description: Manager performance per gameweek
+properties:
+  manager:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: manager
+  gameweek:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: gameweek
+  points:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: points
+  totalPoints:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: totalPoints
+  rank:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: rank
+  gameweekRank:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: gameweekRank
+  transfers:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: transfers
+  transferCost:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: transferCost
+  bank:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: bank
+  teamValue:
+    container:
+      space: fantasy_football
+      externalId: ManagerGameweekPerformance
+    containerPropertyIdentifier: teamValue
+
