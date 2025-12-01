@@ -101,6 +101,39 @@ CUSTOM_CSS = """
         letter-spacing: 1px;
     }
     
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
+        .hero-banner {
+            padding: 1.5rem 1rem;
+        }
+        
+        .hero-title {
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero-subtitle {
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+        .hero-banner {
+            padding: 1rem 0.5rem;
+        }
+        
+        .hero-title {
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero-subtitle {
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+    }
+    
     /* Stats Cards */
     .metric-card {
         background: linear-gradient(135deg, #FFFFFF 0%, #f0f2f6 100%);
