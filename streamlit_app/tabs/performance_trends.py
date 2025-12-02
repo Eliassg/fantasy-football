@@ -161,7 +161,7 @@ def _render_gameweek_points(combined_df):
     )
     
     apply_plotly_theme(fig)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
     
     # Summary stats
     st.subheader("Gameweek Statistics")
@@ -210,7 +210,7 @@ def _render_cumulative_view(combined_df):
     )
     
     apply_plotly_theme(fig)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
     
     # Points gaps
     st.subheader("Current Standings")
@@ -329,7 +329,7 @@ def _render_transfer_analysis(combined_df):
         )
         
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
         st.caption("💡 Larger circles = more transfers. Numbers show exact transfer count.")
     else:
         st.info("No transfers made in the selected gameweeks")
@@ -388,7 +388,7 @@ def _render_rank_movement(combined_df, full_league_df):
     )
     
     apply_plotly_theme(fig)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
     
     # Rank changes
     st.subheader("Position Changes")

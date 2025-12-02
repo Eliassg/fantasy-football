@@ -165,7 +165,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
             )
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
         
         with col2:
             st.markdown("### 🔴 Hardest Fixtures (Avoid These Teams)")
@@ -197,7 +197,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
             )
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
     
     # Players to Target (from teams with easy fixtures)
     st.subheader("⭐ Players to Target")
@@ -267,7 +267,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                 )
                 
                 apply_plotly_theme(fig)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
             
             with col2:
                 st.markdown("### 💎 Best Value Picks")
@@ -305,7 +305,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                 )
                 
                 apply_plotly_theme(fig)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
             
             # Table of top picks
             st.markdown("### 📋 Detailed Player List")
@@ -388,7 +388,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                 )
                 
                 apply_plotly_theme(fig)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
             
             with col2:
                 st.markdown("### 💡 Captain Tips")
@@ -480,7 +480,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                     )
                     
                     apply_plotly_theme(fig)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig)
                 else:
                     st.info("No teams have significantly improving fixtures")
             
@@ -510,7 +510,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                     )
                     
                     apply_plotly_theme(fig)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig)
                 else:
                     st.info("No teams have significantly worsening fixtures")
     
@@ -579,7 +579,7 @@ def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_d
                 )
                 
                 apply_plotly_theme(fig)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig)
             
             with col2:
                 st.markdown("### 🎯 Top Differentials")

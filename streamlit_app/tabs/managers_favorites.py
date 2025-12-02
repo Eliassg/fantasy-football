@@ -122,7 +122,7 @@ def _render_team_performance(betting_filtered, selected_manager, get_team_color)
             showlegend=False
         )
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
     
     with col2:
         most_valuable = team_summary.nlargest(10, "points_per_selection")
@@ -146,7 +146,7 @@ def _render_team_performance(betting_filtered, selected_manager, get_team_color)
             showlegend=False
         )
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
     
     # Value analysis insights
     _render_value_insights(team_summary)
@@ -302,7 +302,7 @@ def _render_manager_detail(client, managers_df, betting_filtered, players_dict, 
             height=500
         )
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
     
     st.markdown("---")
 

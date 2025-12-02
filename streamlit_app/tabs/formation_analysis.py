@@ -135,7 +135,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
         )
         
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
     
     with col2:
         # Formation usage pie chart
@@ -155,7 +155,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
         )
         
         apply_plotly_theme(fig)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig)
     
     # Detailed statistics table
     st.subheader("Formation Statistics")
@@ -214,7 +214,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
     fig.update_xaxes(dtick=1)
     
     apply_plotly_theme(fig)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
     
     # Best formations by points range
     st.subheader("Formation Profitability Analysis")
@@ -250,7 +250,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
     )
     
     apply_plotly_theme(fig)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig)
     
     # Manager Formation Preferences
     st.subheader("👥 Manager Formation Preferences")
@@ -346,7 +346,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
             )
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
             
             # Show top 5 details
             st.markdown("**Top 5 Managers:**")
@@ -388,7 +388,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
             )
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
             
             # Show bottom 5 details
             st.markdown("**Bottom 5 Managers:**")
@@ -482,7 +482,7 @@ def render(client, managers_df, fetch_manager_teams, fetch_players, fetch_player
                             )
                             
                             apply_plotly_theme(fig)
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig)
                         
                         with col2:
                             st.markdown("### 📈 Captain Statistics")

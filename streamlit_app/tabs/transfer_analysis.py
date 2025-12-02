@@ -161,7 +161,7 @@ def render(client, managers_df, fetch_transfer_data, fetch_players):
             fig.update_xaxes(dtick=1)
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
             
             # Summary interpretation
             final_net = transfer_filtered['cumulative_net'].iloc[-1]
@@ -255,7 +255,7 @@ def render(client, managers_df, fetch_transfer_data, fetch_players):
             )
             
             apply_plotly_theme(fig)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig)
             
         else:
             st.info(f"No transfer data available for {selected_manager}")
