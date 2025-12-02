@@ -120,47 +120,47 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
     st.caption("_Best average net benefit_")
     # Calculate actual transfer profitability using transfer data
     if transfers_df is not None and not transfers_df.empty:
-            # Calculate average net benefit per transfer for each manager
-            transfer_profit = transfers_df.groupby('manager_id').agg({
-                'net_benefit': ['sum', 'mean', 'count']
-            }).reset_index()
-            transfer_profit.columns = ['manager_id', 'total_net_benefit', 'avg_net_benefit', 'transfer_count']
+        # Calculate average net benefit per transfer for each manager
+        transfer_profit = transfers_df.groupby('manager_id').agg({
+            'net_benefit': ['sum', 'mean', 'count']
+        }).reset_index()
+        transfer_profit.columns = ['manager_id', 'total_net_benefit', 'avg_net_benefit', 'transfer_count']
+        
+        # Filter for managers with at least 3 transfers
+        transfer_profit = transfer_profit[transfer_profit['transfer_count'] >= 3]
+        
+        if not transfer_profit.empty:
+            # Find best average net benefit
+            best_transfer = transfer_profit.nlargest(1, 'avg_net_benefit').iloc[0]
             
-            # Filter for managers with at least 3 transfers
-            transfer_profit = transfer_profit[transfer_profit['transfer_count'] >= 3]
+            # Get manager name
+            manager_id_str = best_transfer['manager_id']
+            entry_id = manager_id_str.replace("manager_", "") if isinstance(manager_id_str, str) else manager_id_str
+            try:
+                entry_id = int(entry_id)
+                manager_info = managers_df[managers_df['entry_id'] == entry_id]
+                manager_name = manager_info['manager_name'].iloc[0] if not manager_info.empty else f"Manager {entry_id}"
+            except:
+                manager_name = f"Manager {manager_id_str}"
             
-            if not transfer_profit.empty:
-                # Find best average net benefit
-                best_transfer = transfer_profit.nlargest(1, 'avg_net_benefit').iloc[0]
-                
-                # Get manager name
-                manager_id_str = best_transfer['manager_id']
-                entry_id = manager_id_str.replace("manager_", "") if isinstance(manager_id_str, str) else manager_id_str
-                try:
-                    entry_id = int(entry_id)
-                    manager_info = managers_df[managers_df['entry_id'] == entry_id]
-                    manager_name = manager_info['manager_name'].iloc[0] if not manager_info.empty else f"Manager {entry_id}"
-                except:
-                    manager_name = f"Manager {manager_id_str}"
-                
-                st.markdown(f"**{manager_name}**")
-                st.write(f"⚡ +{best_transfer['avg_net_benefit']:.1f} pts per transfer")
-                st.write(f"Total gain: {best_transfer['total_net_benefit']:.1f} pts from {int(best_transfer['transfer_count'])} transfers")
-            else:
-                st.info("Need at least 3 transfers for this stat")
+            st.markdown(f"**{manager_name}**")
+            st.write(f"⚡ +{best_transfer['avg_net_benefit']:.1f} pts per transfer")
+            st.write(f"Total gain: {best_transfer['total_net_benefit']:.1f} pts from {int(best_transfer['transfer_count'])} transfers")
         else:
-            # Fallback to old metric if no transfer data
-            managers_df_copy = managers_df.copy()
-            managers_df_copy["points_per_transfer"] = managers_df_copy.apply(
-                lambda x: x["overall_points"] / x["total_transfers"] if x["total_transfers"] > 0 else 0,
-                axis=1
-            )
-            valid_managers = managers_df_copy[managers_df_copy["total_transfers"] > 0]
-            if not valid_managers.empty:
-                best_efficiency = valid_managers.nlargest(1, "points_per_transfer").iloc[0]
-                st.markdown(f"**{best_efficiency['manager_name']}**")
-                st.write(f"⚡ {best_efficiency['points_per_transfer']:.1f} points per transfer")
-                st.write(f"Total: {int(best_efficiency['overall_points']):,} points with {int(best_efficiency['total_transfers'])} transfers")
+            st.info("Need at least 3 transfers for this stat")
+    else:
+        # Fallback to old metric if no transfer data
+        managers_df_copy = managers_df.copy()
+        managers_df_copy["points_per_transfer"] = managers_df_copy.apply(
+            lambda x: x["overall_points"] / x["total_transfers"] if x["total_transfers"] > 0 else 0,
+            axis=1
+        )
+        valid_managers = managers_df_copy[managers_df_copy["total_transfers"] > 0]
+        if not valid_managers.empty:
+            best_efficiency = valid_managers.nlargest(1, "points_per_transfer").iloc[0]
+            st.markdown(f"**{best_efficiency['manager_name']}**")
+            st.write(f"⚡ {best_efficiency['points_per_transfer']:.1f} points per transfer")
+            st.write(f"Total: {int(best_efficiency['overall_points']):,} points with {int(best_efficiency['total_transfers'])} transfers")
     
     st.markdown("---")
     
