@@ -81,6 +81,17 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
         
         st.markdown("---")
         
+        st.markdown("### 💎 The Set & Forget Legend")
+        st.caption("_Fewest transfers, still performing_")
+        # Manager with fewest transfers but still in top 50% of points
+        median_points = managers_df["overall_points"].median()
+        performers = managers_df[managers_df["overall_points"] >= median_points]
+        if not performers.empty:
+            set_forget = performers.nsmallest(1, "total_transfers").iloc[0]
+            st.markdown(f"**{set_forget['manager_name']}**")
+            st.write(f"🔄 Only {int(set_forget['total_transfers'])} transfers | 🎯 {int(set_forget['overall_points']):,} points")
+    
+    with col2:
         st.markdown("### 🎯 Best Bargain Hunter")
         st.caption("_Highest value growth with fewest transfers_")
         # Create efficiency metric: value growth per transfer
@@ -100,17 +111,16 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
                 st.markdown(f"**{best_bargain['manager_name']}**")
                 st.write(f"💎 £{best_bargain['value_efficiency']:.2f}m per transfer")
                 st.write(f"Total: £{best_bargain['team_value_growth']:.1f}m with {int(best_bargain['total_transfers'])} transfers")
-    
-    with col2:
-        st.markdown("### 💎 The Set & Forget Legend")
-        st.caption("_Fewest transfers, still performing_")
-        # Manager with fewest transfers but still in top 50% of points
-        median_points = managers_df["overall_points"].median()
-        performers = managers_df[managers_df["overall_points"] >= median_points]
-        if not performers.empty:
-            set_forget = performers.nsmallest(1, "total_transfers").iloc[0]
-            st.markdown(f"**{set_forget['manager_name']}**")
-            st.write(f"🔄 Only {int(set_forget['total_transfers'])} transfers | 🎯 {int(set_forget['overall_points']):,} points")
+        
+        st.markdown("---")
+        
+        st.markdown("### 🚀 Highest Ceiling")
+        st.caption("_Best single gameweek performance_")
+        # Manager with highest average points per week (peak performance)
+        if not managers_df.empty:
+            peak_performer = managers_df.nlargest(1, "avg_points_per_week").iloc[0]
+            st.markdown(f"**{peak_performer['manager_name']}**")
+            st.write(f"⚡ {peak_performer['avg_points_per_week']:.1f} PPW | 🎯 {int(peak_performer['overall_points']):,} total points")
         
     
     st.markdown("---")
