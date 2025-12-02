@@ -100,15 +100,6 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
                 st.markdown(f"**{best_bargain['manager_name']}**")
                 st.write(f"💎 £{best_bargain['value_efficiency']:.2f}m per transfer")
                 st.write(f"Total: £{best_bargain['team_value_growth']:.1f}m with {int(best_bargain['total_transfers'])} transfers")
-        
-        st.markdown("---")
-        
-        st.markdown("### 🔄 Most Active Trader")
-        st.caption("_Who's hitting that transfer button?_")
-        most_active = managers_df.nlargest(1, "total_transfers").iloc[0]
-        st.markdown(f"**{most_active['manager_name']}**")
-        st.write(f"🔄 {int(most_active['total_transfers'])} transfers made")
-        st.write(f"Points: {int(most_active['overall_points']):,} | Rank: {int(most_active['overall_rank'])}")
     
     with col2:
         st.markdown("### 💎 The Set & Forget Legend")
@@ -121,12 +112,14 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
             st.markdown(f"**{set_forget['manager_name']}**")
             st.write(f"🔄 Only {int(set_forget['total_transfers'])} transfers | 🎯 {int(set_forget['overall_points']):,} points")
         
-        st.markdown("---")
-        
-        st.markdown("### 📊 Most Profitable Transfers")
-        st.caption("_Best average net benefit_")
-        # Calculate actual transfer profitability using transfer data
-        if transfers_df is not None and not transfers_df.empty:
+    
+    st.markdown("---")
+    
+    # Most Profitable Transfers (full width)
+    st.markdown("### 📊 Most Profitable Transfers")
+    st.caption("_Best average net benefit_")
+    # Calculate actual transfer profitability using transfer data
+    if transfers_df is not None and not transfers_df.empty:
             # Calculate average net benefit per transfer for each manager
             transfer_profit = transfers_df.groupby('manager_id').agg({
                 'net_benefit': ['sum', 'mean', 'count']
@@ -168,9 +161,13 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
                 st.markdown(f"**{best_efficiency['manager_name']}**")
                 st.write(f"⚡ {best_efficiency['points_per_transfer']:.1f} points per transfer")
                 st.write(f"Total: {int(best_efficiency['overall_points']):,} points with {int(best_efficiency['total_transfers'])} transfers")
-        
-        st.markdown("---")
-        
+    
+    st.markdown("---")
+    
+    # Best and Worst Single Transfer - Side by Side
+    col1, col2 = st.columns(2)
+    
+    with col1:
         st.markdown("### 🎯 Best Single Transfer")
         st.caption("_Highest net benefit from one move_")
         # Find the single best transfer
@@ -198,9 +195,8 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
             st.write(f"💰 Net gain: **+{best_single['net_benefit']:.1f} pts**")
         else:
             st.info("Transfer data not available")
-        
-        st.markdown("---")
-        
+    
+    with col2:
         st.markdown("### 💸 Worst Single Transfer")
         st.caption("_Biggest regret of the season_")
         # Find the single worst transfer
@@ -228,9 +224,13 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
             st.write(f"💸 Net loss: **{worst_single['net_benefit']:.1f} pts**")
         else:
             st.info("Transfer data not available")
-        
-        st.markdown("---")
-        
+    
+    st.markdown("---")
+    
+    # Wildcard King and Most Active Trader - Side by Side
+    col1, col2 = st.columns(2)
+    
+    with col1:
         st.markdown("### 🎲 The Wildcard King")
         st.caption("_Most transfers but still in top ranks_")
         # Manager with most transfers who is in top 30% of ranks
@@ -240,6 +240,16 @@ def render(managers_df, client=None, fetch_transfer_data=None, fetch_players=Non
             wildcard = top_rankers.nlargest(1, "total_transfers").iloc[0]
             st.markdown(f"**{wildcard['manager_name']}**")
             st.write(f"🔄 {int(wildcard['total_transfers'])} transfers | 🏆 Rank: {int(wildcard['overall_rank'])}")
+        else:
+            st.info("No managers in top 30% with high transfers")
+    
+    with col2:
+        st.markdown("### 🔄 Most Active Trader")
+        st.caption("_Who's hitting that transfer button?_")
+        most_active = managers_df.nlargest(1, "total_transfers").iloc[0]
+        st.markdown(f"**{most_active['manager_name']}**")
+        st.write(f"🔄 {int(most_active['total_transfers'])} transfers made")
+        st.write(f"Points: {int(most_active['overall_points']):,} | Rank: {int(most_active['overall_rank'])}")
     
     st.markdown("---")
     
