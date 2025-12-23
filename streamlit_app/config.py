@@ -342,6 +342,26 @@ CUSTOM_CSS = """
         font-weight: 500;
     }
     
+    /* Selected items in multiselect - dark text on green background */
+    .stMultiSelect [data-baseweb="tag"] {
+        background-color: var(--accent-primary) !important;
+        color: #0a0a0f !important;
+    }
+    
+    .stMultiSelect [data-baseweb="tag"] span {
+        color: #0a0a0f !important;
+    }
+    
+    /* Tag close button */
+    .stMultiSelect [data-baseweb="tag"] svg {
+        fill: #0a0a0f !important;
+    }
+    
+    /* Selectbox selected value text */
+    .stSelectbox [data-baseweb="select"] span {
+        color: var(--text-primary) !important;
+    }
+    
     /* Text inputs */
     .stTextInput input {
         background-color: var(--bg-card) !important;
