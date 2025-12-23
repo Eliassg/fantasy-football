@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
-from ..utils import apply_plotly_theme
+from utils import apply_plotly_theme
 
 
 def calculate_formation(player_positions, multipliers):

@@ -5,7 +5,7 @@ import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
 import plotly.express as px
-from ..utils import apply_plotly_theme
+from utils import apply_plotly_theme
 
 
 def render(client, managers_df, fetch_teams, fetch_players, fetch_team_betting_data, fetch_fixtures):
