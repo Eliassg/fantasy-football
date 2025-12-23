@@ -34,8 +34,8 @@ def main():
     # Hero Banner
     st.markdown("""
         <div class="hero-banner">
-            <div class="hero-title">⚽ Let's play fantaSIUUUU! ⚽</div>
-            <div class="hero-subtitle">🏆 Your Ultimate Fantasy Football Analytics Dashboard 🏆</div>
+            <div class="hero-title">Fantasy Football Analytics</div>
+            <div class="hero-subtitle">Your comprehensive dashboard for FPL insights and performance tracking</div>
         </div>
     """, unsafe_allow_html=True)
     
@@ -153,11 +153,11 @@ def main():
     st.markdown("---")
     st.markdown(f"""
         <div class="footer-style">
-            <div style="font-size: 1.2rem; margin-bottom: 0.5rem;">⚽ Fantasy Football Analytics ⚽</div>
-            <div style="font-size: 0.9rem; opacity: 0.9;">
-                📊 <strong>Data Source:</strong> {client.config.project} | 
-                🌐 <strong>Space:</strong> fantasy_football | 
-                🕐 <strong>Last Updated:</strong> {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M')}
+            <div style="font-size: 1rem; margin-bottom: 0.5rem; color: #f0f0f5 !important;">Fantasy Football Analytics</div>
+            <div style="font-size: 0.85rem;">
+                <strong>Source:</strong> {client.config.project} · 
+                <strong>Space:</strong> fantasy_football · 
+                <strong>Updated:</strong> {pd.Timestamp.now().strftime('%Y-%m-%d %H:%M')}
             </div>
         </div>
     """, unsafe_allow_html=True)

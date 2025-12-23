@@ -28,340 +28,439 @@ PREMIER_LEAGUE_COLORS = {
     "Luton": {"primary": "#F78F1E", "secondary": "#002D62"}
 }
 
-# Custom CSS
+# Custom CSS - Dark Modern Theme
 CUSTOM_CSS = """
 <style>
-    /* Import Google Fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;800;900&family=Raleway:wght@400;600;700;800&display=swap');
+    /* Import Google Fonts - Modern sans-serif */
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
     
-    /* Main App Background - Clean with subtle accent */
+    /* CSS Variables for consistent theming */
+    :root {
+        --bg-primary: #0a0a0f;
+        --bg-secondary: #12121a;
+        --bg-tertiary: #1a1a24;
+        --bg-card: #16161f;
+        --bg-hover: #1f1f2a;
+        --accent-primary: #00e676;
+        --accent-secondary: #00bfa5;
+        --accent-glow: rgba(0, 230, 118, 0.15);
+        --text-primary: #f0f0f5;
+        --text-secondary: #a0a0b0;
+        --text-muted: #6a6a7a;
+        --border-subtle: rgba(255, 255, 255, 0.06);
+        --border-accent: rgba(0, 230, 118, 0.3);
+    }
+    
+    /* Main App Background - Clean solid dark */
+    .stApp {
+        background-color: var(--bg-primary);
+    }
+    
     .main {
-        background-color: #f8f9fa;
-        font-family: 'Montserrat', sans-serif;
+        background-color: transparent;
+        font-family: 'Outfit', sans-serif;
     }
     
-    /* All text default to dark for readability */
     .main * {
-        color: #2c3e50;
+        font-family: 'Outfit', sans-serif;
     }
     
-    /* Header Styling */
-    .main-header {
-        font-size: 5rem;
-        font-weight: 900;
-        background: linear-gradient(90deg, #37003c, #00ff87, #37003c);
-        background-size: 200% auto;
-        color: #FFFFFF;
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-align: center;
-        margin-bottom: 1rem;
-        padding: 1rem 0;
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        animation: gradient-shift 3s ease infinite;
-        font-family: 'Bebas Neue', cursive;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-    }
-    
-    @keyframes gradient-shift {
-        0% { background-position: 0% center; }
-        50% { background-position: 100% center; }
-        100% { background-position: 0% center; }
-    }
-    
-    /* Hero Section */
+    /* Hero Section - Sleek minimal design */
     .hero-banner {
-        background: linear-gradient(135deg, #37003c 0%, #00ff87 100%);
-        padding: 2.5rem;
-        border-radius: 15px;
+        background: var(--bg-secondary);
+        padding: 3rem 2rem;
+        border-radius: 16px;
         text-align: center;
         margin-bottom: 2rem;
-        box-shadow: 0 8px 32px rgba(55, 0, 60, 0.4);
-        border: 3px solid #00ff87;
+        border: 1px solid var(--border-subtle);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .hero-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--accent-primary), transparent);
+        opacity: 0.5;
     }
     
     .hero-title {
-        color: #FFFFFF;
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        text-shadow: 3px 3px 10px rgba(0,0,0,0.6);
-        font-family: 'Bebas Neue', cursive;
-        letter-spacing: 3px;
+        color: var(--text-primary);
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.5px;
     }
     
     .hero-subtitle {
-        color: #FFFFFF;
-        font-size: 1.3rem;
-        font-weight: 600;
-        text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-        font-family: 'Raleway', sans-serif;
-        letter-spacing: 1px;
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+        font-weight: 400;
+        letter-spacing: 0.5px;
     }
     
     /* Mobile responsiveness */
     @media screen and (max-width: 768px) {
         .hero-banner {
-            padding: 1.5rem 1rem;
+            padding: 2rem 1.5rem;
         }
         
         .hero-title {
-            font-size: 2rem;
-            letter-spacing: 2px;
+            font-size: 1.8rem;
         }
         
         .hero-subtitle {
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
+            font-size: 0.95rem;
         }
     }
     
     @media screen and (max-width: 480px) {
         .hero-banner {
-            padding: 1rem 0.5rem;
+            padding: 1.5rem 1rem;
         }
         
         .hero-title {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
+            font-size: 1.4rem;
         }
         
         .hero-subtitle {
-            font-size: 0.75rem;
-            letter-spacing: 0.3px;
+            font-size: 0.85rem;
         }
     }
     
     /* Stats Cards */
     .metric-card {
-        background: linear-gradient(135deg, #FFFFFF 0%, #f0f2f6 100%);
+        background: var(--bg-card);
         padding: 1.5rem;
         border-radius: 12px;
         margin: 0.5rem 0;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        border-left: 5px solid #37003c;
-        transition: transform 0.2s, box-shadow 0.2s;
+        border: 1px solid var(--border-subtle);
+        transition: all 0.2s ease;
     }
     
     .metric-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(55, 0, 60, 0.3);
+        background: var(--bg-hover);
+        border-color: var(--border-accent);
     }
     
-    /* Football Field Pattern Background */
-    .stApp {
-        background-color: #f8f9fa;
-        background-image: 
-            repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 50px,
-                rgba(55, 0, 60, 0.02) 50px,
-                rgba(55, 0, 60, 0.02) 100px
-            ),
-            repeating-linear-gradient(
-                0deg,
-                transparent,
-                transparent 50px,
-                rgba(55, 0, 60, 0.02) 50px,
-                rgba(55, 0, 60, 0.02) 100px
-            );
-    }
-    
-    /* Tabs Styling - Football themed */
+    /* Tabs Styling - Clean dark pills */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 1rem;
-        background: linear-gradient(135deg, #37003c 0%, #4a0049 100%);
-        padding: 1rem;
+        gap: 0.5rem;
+        background: var(--bg-secondary);
+        padding: 0.5rem;
         border-radius: 12px;
-        box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+        border: 1px solid var(--border-subtle);
     }
     
     .stTabs [data-baseweb="tab"] {
-        height: 3.5rem;
-        font-size: 1.1rem;
-        font-weight: 700;
-        background-color: rgba(255, 255, 255, 0.1);
+        height: 2.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        background-color: transparent;
         border-radius: 8px;
-        padding: 0 1.5rem;
-        transition: all 0.3s;
-        border: 2px solid transparent;
+        padding: 0 1.25rem;
+        transition: all 0.2s ease;
+        border: none;
     }
     
-    .stTabs [data-baseweb="tab"] button {
-        color: #FFFFFF !important;
-    }
-    
+    .stTabs [data-baseweb="tab"] button,
     .stTabs [data-baseweb="tab"] p {
-        color: #FFFFFF !important;
+        color: var(--text-secondary) !important;
     }
     
     .stTabs [data-baseweb="tab"]:hover {
-        background-color: rgba(0, 255, 135, 0.2);
-        border: 2px solid #00ff87;
-        transform: scale(1.05);
+        background-color: var(--bg-hover);
     }
     
     .stTabs [data-baseweb="tab"]:hover button,
     .stTabs [data-baseweb="tab"]:hover p {
-        color: #00ff87 !important;
+        color: var(--text-primary) !important;
     }
     
     .stTabs [data-baseweb="tab"][aria-selected="true"] {
-        background: linear-gradient(135deg, #00ff87 0%, #00cc6a 100%);
-        border: 2px solid #37003c;
-        box-shadow: 0 4px 12px rgba(0, 255, 135, 0.4);
+        background: var(--accent-primary);
     }
     
     .stTabs [data-baseweb="tab"][aria-selected="true"] button,
     .stTabs [data-baseweb="tab"][aria-selected="true"] p {
-        color: #37003c !important;
+        color: var(--bg-primary) !important;
+        font-weight: 600;
+    }
+    
+    /* Tab content area */
+    .stTabs [data-baseweb="tab-panel"] {
+        padding-top: 1.5rem;
     }
     
     /* Team Badge */
     .team-badge {
         display: inline-block;
         padding: 0.4rem 1rem;
-        border-radius: 8px;
-        font-weight: bold;
+        border-radius: 6px;
+        font-weight: 500;
         color: white;
         margin: 0.2rem;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-        transition: transform 0.2s;
+        font-size: 0.85rem;
+        transition: transform 0.2s ease;
     }
     
     .team-badge:hover {
-        transform: scale(1.1);
+        transform: translateY(-2px);
     }
     
     /* Metric Containers */
+    [data-testid="stMetric"] {
+        background: var(--bg-card);
+        padding: 1rem 1.25rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-subtle);
+    }
+    
     [data-testid="stMetricValue"] {
-        font-size: 2rem;
-        font-weight: 800;
-        color: #37003c !important;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--accent-primary) !important;
     }
     
     [data-testid="stMetricLabel"] {
-        font-weight: 700;
-        color: #495057 !important;
-        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-secondary) !important;
+        font-size: 0.9rem;
+    }
+    
+    [data-testid="stMetricDelta"] {
+        color: var(--text-muted) !important;
     }
     
     /* Headings */
     h1 {
-        color: #37003c !important;
-        font-family: 'Bebas Neue', cursive !important;
-        letter-spacing: 2px;
-        font-size: 3rem !important;
+        color: var(--text-primary) !important;
+        font-weight: 700 !important;
+        letter-spacing: -0.5px;
+        font-size: 2.2rem !important;
     }
     
     h2 {
-        color: #37003c !important;
-        font-family: 'Raleway', sans-serif !important;
-        font-weight: 800 !important;
-        letter-spacing: 1px;
+        color: var(--text-primary) !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.3px;
     }
     
     h3 {
-        color: #2c3e50 !important;
-        font-family: 'Raleway', sans-serif !important;
-        font-weight: 700 !important;
-    }
-    
-    h4, h5, h6 {
-        color: #2c3e50 !important;
-        font-family: 'Montserrat', sans-serif !important;
+        color: var(--text-primary) !important;
         font-weight: 600 !important;
     }
     
+    h4, h5, h6 {
+        color: var(--text-secondary) !important;
+        font-weight: 500 !important;
+    }
+    
     /* Paragraphs and text */
-    p, span, div {
-        color: #495057;
-        font-family: 'Montserrat', sans-serif;
+    p, span, div, label {
+        color: var(--text-secondary);
+    }
+    
+    /* Links */
+    a {
+        color: var(--accent-primary) !important;
+    }
+    
+    a:hover {
+        color: var(--accent-secondary) !important;
     }
     
     /* Data Tables */
     .dataframe {
-        border-radius: 10px;
+        border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+    }
+    
+    .dataframe th {
+        background: var(--bg-tertiary) !important;
+        color: var(--text-primary) !important;
+        font-weight: 600;
+        border-bottom: 1px solid var(--border-subtle) !important;
+    }
+    
+    .dataframe td {
+        background: var(--bg-card) !important;
+        color: var(--text-secondary) !important;
+        border-bottom: 1px solid var(--border-subtle) !important;
+    }
+    
+    .dataframe tr:hover td {
+        background: var(--bg-hover) !important;
     }
     
     /* Buttons */
     .stButton > button {
-        background: linear-gradient(135deg, #37003c 0%, #4a0049 100%);
-        color: #00ff87 !important;
-        font-weight: 700;
-        border: 2px solid #00ff87;
+        background: var(--accent-primary);
+        color: var(--bg-primary) !important;
+        font-weight: 600;
+        border: none;
         border-radius: 8px;
-        padding: 0.5rem 2rem;
-        transition: all 0.3s;
+        padding: 0.6rem 1.5rem;
+        transition: all 0.2s ease;
     }
     
     .stButton > button:hover {
-        background: linear-gradient(135deg, #00ff87 0%, #00cc6a 100%);
-        color: #37003c !important;
-        border: 2px solid #37003c;
-        transform: scale(1.05);
-        box-shadow: 0 4px 12px rgba(0, 255, 135, 0.4);
+        background: var(--accent-secondary);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 20px var(--accent-glow);
     }
     
     /* Selectbox and Inputs */
-    .stSelectbox > div > div {
-        background-color: #FFFFFF;
-        border: 2px solid #37003c;
+    .stSelectbox > div > div,
+    .stMultiSelect > div > div {
+        background-color: var(--bg-card);
+        border: 1px solid var(--border-subtle);
         border-radius: 8px;
+        color: var(--text-primary);
     }
     
-    .stSelectbox label {
-        color: #2c3e50 !important;
-        font-weight: 600;
+    .stSelectbox > div > div:hover,
+    .stMultiSelect > div > div:hover {
+        border-color: var(--border-accent);
     }
     
+    .stSelectbox label,
     .stMultiSelect label {
-        color: #2c3e50 !important;
-        font-weight: 600;
+        color: var(--text-secondary) !important;
+        font-weight: 500;
+    }
+    
+    /* Text inputs */
+    .stTextInput input {
+        background-color: var(--bg-card) !important;
+        border: 1px solid var(--border-subtle) !important;
+        border-radius: 8px !important;
+        color: var(--text-primary) !important;
+    }
+    
+    .stTextInput input:focus {
+        border-color: var(--accent-primary) !important;
+        box-shadow: 0 0 0 1px var(--accent-primary) !important;
+    }
+    
+    /* Slider */
+    .stSlider [data-baseweb="slider"] {
+        background: var(--bg-tertiary);
+    }
+    
+    .stSlider [data-testid="stTickBarMin"],
+    .stSlider [data-testid="stTickBarMax"] {
+        color: var(--text-muted) !important;
     }
     
     /* Footer */
     .footer-style {
-        background: linear-gradient(135deg, #37003c 0%, #4a0049 100%);
+        background: var(--bg-secondary);
         padding: 1.5rem;
         border-radius: 12px;
         text-align: center;
-        color: #FFFFFF !important;
-        font-weight: 600;
         margin-top: 2rem;
-        box-shadow: 0 -4px 16px rgba(0,0,0,0.2);
+        border: 1px solid var(--border-subtle);
     }
     
     .footer-style div {
-        color: #FFFFFF !important;
+        color: var(--text-secondary) !important;
     }
     
     .footer-style strong {
-        color: #00ff87 !important;
+        color: var(--accent-primary) !important;
     }
     
     /* Expander Styling */
     .streamlit-expanderHeader {
-        background: linear-gradient(135deg, rgba(55, 0, 60, 0.1) 0%, rgba(0, 255, 135, 0.1) 100%);
+        background: var(--bg-card);
         border-radius: 8px;
-        border: 2px solid #37003c;
-        font-weight: 700;
-        color: #37003c;
+        border: 1px solid var(--border-subtle);
+        font-weight: 500;
+        color: var(--text-primary);
     }
     
     .streamlit-expanderHeader:hover {
-        background: linear-gradient(135deg, rgba(55, 0, 60, 0.2) 0%, rgba(0, 255, 135, 0.2) 100%);
+        background: var(--bg-hover);
+        border-color: var(--border-accent);
+    }
+    
+    [data-testid="stExpander"] {
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+        border-radius: 12px;
     }
     
     /* Info/Warning/Success boxes */
     .stAlert {
         border-radius: 10px;
-        border-left: 5px solid #37003c;
+        background: var(--bg-card);
+        border: 1px solid var(--border-subtle);
+    }
+    
+    /* Sidebar */
+    [data-testid="stSidebar"] {
+        background: var(--bg-secondary);
+        border-right: 1px solid var(--border-subtle);
+    }
+    
+    /* Horizontal rule */
+    hr {
+        border-color: var(--border-subtle);
+    }
+    
+    /* Spinner */
+    .stSpinner > div {
+        border-top-color: var(--accent-primary) !important;
+    }
+    
+    /* Checkbox and radio */
+    .stCheckbox label,
+    .stRadio label {
+        color: var(--text-secondary) !important;
+    }
+    
+    /* Code blocks */
+    code {
+        background: var(--bg-tertiary) !important;
+        color: var(--accent-primary) !important;
+        font-family: 'JetBrains Mono', monospace;
+    }
+    
+    pre {
+        background: var(--bg-tertiary) !important;
+        border: 1px solid var(--border-subtle);
+        border-radius: 8px;
+    }
+    
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: var(--bg-tertiary);
+        border-radius: 4px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+    }
+    
+    /* Plotly chart backgrounds */
+    .js-plotly-plot .plotly .bg {
+        fill: var(--bg-card) !important;
     }
 </style>
 """
@@ -384,36 +483,47 @@ FIXTURE_VIEW = "Fixture"
 # Cache TTL (in seconds)
 CACHE_TTL = 3600  # 1 hour
 
-# Plotly Chart Theme Configuration
+# Plotly Chart Theme Configuration - Dark Modern
 PLOTLY_THEME = {
     "layout": {
-        "paper_bgcolor": "rgba(248, 249, 250, 0.95)",
-        "plot_bgcolor": "rgba(255, 255, 255, 0.9)",
+        "paper_bgcolor": "#16161f",
+        "plot_bgcolor": "#16161f",
         "font": {
-            "family": "Montserrat, sans-serif",
+            "family": "Outfit, sans-serif",
             "size": 13,
-            "color": "#2c3e50"
+            "color": "#a0a0b0"
         },
         "title": {
             "font": {
-                "family": "Raleway, sans-serif",
-                "size": 20,
-                "color": "#37003c",
-                "weight": 700
+                "family": "Outfit, sans-serif",
+                "size": 18,
+                "color": "#f0f0f5"
             }
         },
         "xaxis": {
-            "gridcolor": "rgba(55, 0, 60, 0.1)",
-            "linecolor": "#37003c",
-            "tickfont": {"color": "#2c3e50", "size": 12}
+            "gridcolor": "rgba(255, 255, 255, 0.06)",
+            "linecolor": "rgba(255, 255, 255, 0.1)",
+            "tickfont": {"color": "#a0a0b0", "size": 12},
+            "zerolinecolor": "rgba(255, 255, 255, 0.1)"
         },
         "yaxis": {
-            "gridcolor": "rgba(55, 0, 60, 0.1)",
-            "linecolor": "#37003c",
-            "tickfont": {"color": "#2c3e50", "size": 12}
+            "gridcolor": "rgba(255, 255, 255, 0.06)",
+            "linecolor": "rgba(255, 255, 255, 0.1)",
+            "tickfont": {"color": "#a0a0b0", "size": 12},
+            "zerolinecolor": "rgba(255, 255, 255, 0.1)"
         },
-        "colorway": ["#37003c", "#00ff87", "#e30613", "#0057b8", "#6cabdd", "#c8102e"],
-        "hovermode": "closest"
+        "colorway": ["#00e676", "#00bfa5", "#64b5f6", "#ba68c8", "#ff8a65", "#ffd54f", "#4db6ac", "#7986cb"],
+        "hovermode": "closest",
+        "hoverlabel": {
+            "bgcolor": "#1a1a24",
+            "bordercolor": "rgba(0, 230, 118, 0.3)",
+            "font": {"color": "#f0f0f5", "family": "Outfit, sans-serif"}
+        },
+        "legend": {
+            "bgcolor": "rgba(22, 22, 31, 0.8)",
+            "bordercolor": "rgba(255, 255, 255, 0.06)",
+            "font": {"color": "#a0a0b0"}
+        }
     }
 }
 
