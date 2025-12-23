@@ -10,7 +10,7 @@ from cognite.client.data_classes.data_modeling.ids import ViewId
 import os
 from dotenv import load_dotenv
 
-from .config import (
+from config import (
     PREMIER_LEAGUE_COLORS, SPACE, VERSION,
     MANAGER_VIEW, GAMEWEEK_PERF_VIEW, TEAM_BETTING_VIEW,
     TEAM_VIEW, TRANSFER_VIEW, PLAYER_VIEW, MANAGER_TEAM_VIEW,
