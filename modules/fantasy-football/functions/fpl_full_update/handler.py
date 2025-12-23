@@ -64,13 +64,14 @@ class FPLClient:
         return response.json()
 
 
-def handle(data: dict[str, Any], client: CogniteClient) -> dict[str, Any]:
+def handle(data: dict[str, Any], client: CogniteClient, secrets: dict[str, str]) -> dict[str, Any]:
     """
     Main handler for comprehensive FPL data update
     
     Args:
         data: Input data (optional league_id override)
         client: CogniteClient instance
+        secrets: Dictionary of secret values (e.g., API keys)
     
     Returns:
         Dictionary with status and statistics
@@ -150,7 +151,7 @@ def handle(data: dict[str, Any], client: CogniteClient) -> dict[str, Any]:
             
             # Enrich with odds if available
             if ODDS_AVAILABLE:
-                api_key = os.getenv("ODDS_API_KEY")
+                api_key = secrets.get("ODDS_API_KEY")
                 if api_key:
                     print("  Fetching betting odds...")
                     try:

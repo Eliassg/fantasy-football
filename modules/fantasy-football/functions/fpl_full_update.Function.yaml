@@ -5,6 +5,7 @@ owner: Fantasy Football Team
 runtime: py311
 envVars:
   FPL_LEAGUE_ID: {{fpl_league_id}}
+secrets:
   ODDS_API_KEY: {{odds_api_key}}
 metadata:
   version: "3.0.0"
