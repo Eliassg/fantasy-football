@@ -7,6 +7,6 @@ triggerRule:
   # Cron format: minute hour day-of-month month day-of-week
   cronExpression: "0 3 */2 * *"
 authentication:
-  clientId: ${CDF_CLIENT_ID}
-  clientSecret: ${CDF_CLIENT_SECRET}
+  clientId: {{client_id}}
+  clientSecret: {{client_secret}}
 

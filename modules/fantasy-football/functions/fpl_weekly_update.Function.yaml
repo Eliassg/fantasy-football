@@ -3,11 +3,10 @@ name: FPL Weekly Update
 description: Weekly update of Fantasy Premier League data to CDF data model
 owner: Fantasy Football Team
 runtime: py311
-cpu: 0.5
-memory: 1.5
 envVars:
-  FPL_LEAGUE_ID: "{{fpl_league_id}}"
+  FPL_LEAGUE_ID: {{fpl_league_id}}
 metadata:
   version: "1.0.0"
   schedule: "weekly"
+functionPath: './handler.py'
 

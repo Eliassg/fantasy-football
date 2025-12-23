@@ -8,8 +8,9 @@ workflowDefinition:
         function:
           externalId: fpl_full_update
         data:
-          league_id: "{{fpl_league_id}}"
+          league_id: {{fpl_league_id}}
       retries: 2
       timeout: 1800  # 30 minutes
       onFailure: abortWorkflow
 
+ 

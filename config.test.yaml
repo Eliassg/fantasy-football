@@ -1,0 +1,14 @@
+environment:
+  name: test
+  project: elias-test
+  validation-type: test
+  selected:
+    - modules/fantasy-football
+variables:
+  modules:
+    fantasy-football:
+      fpl_league_id: "988627"
+      odds_api_key: ${ODDS_API_KEY}
+      client_id : ${IDP_CLIENT_ID}
+      client_secret : ${IDP_CLIENT_SECRET}
+

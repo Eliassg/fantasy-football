@@ -26,17 +26,17 @@ def get_cdf_client():
     """Initialize and return CDF client"""
     # Try Streamlit secrets first (for cloud deployment), then fall back to env vars (for local)
     try:
-        cluster = st.secrets.get("CDF_CLUSTER", os.getenv("CDF_CLUSTER", "bluefield"))
-        project = st.secrets.get("CDF_PROJECT", os.getenv("CDF_PROJECT", "sofie-prod"))
-        base_url = st.secrets.get("CDF_BASE_URL", os.getenv("CDF_BASE_URL", f"https://{cluster}.cognitedata.com"))
-        token_url = st.secrets.get("CDF_TOKEN_URL", os.getenv("CDF_TOKEN_URL"))
-        client_id = st.secrets.get("CDF_CLIENT_ID", os.getenv("CDF_CLIENT_ID"))
-        client_secret = st.secrets.get("CDF_CLIENT_SECRET", os.getenv("CDF_CLIENT_SECRET"))
+        cluster = st.secrets.get("CDF_CLUSTER")
+        project = st.secrets.get("CDF_PROJECT")
+        base_url = st.secrets.get("CDF_BASE_URL")
+        token_url = st.secrets.get("CDF_TOKEN_URL")
+        client_id = st.secrets.get("CDF_CLIENT_ID")
+        client_secret = st.secrets.get("CDF_CLIENT_SECRET")
     except Exception:
         # Fallback to environment variables only
-        cluster = os.getenv("CDF_CLUSTER", "bluefield")
-        project = os.getenv("CDF_PROJECT", "sofie-prod")
-        base_url = os.getenv("CDF_BASE_URL", f"https://{cluster}.cognitedata.com")
+        cluster = os.getenv("CDF_CLUSTER")
+        project = os.getenv("CDF_PROJECT")
+        base_url = os.getenv("CDF_BASE_URL")
         token_url = os.getenv("CDF_TOKEN_URL")
         client_id = os.getenv("CDF_CLIENT_ID")
         client_secret = os.getenv("CDF_CLIENT_SECRET")
