@@ -4,15 +4,15 @@ Main Streamlit Application Entry Point
 import streamlit as st
 import pandas as pd
 
-from .config import CUSTOM_CSS
-from .utils import (
+from config import CUSTOM_CSS
+from utils import (
     get_cdf_client, fetch_managers, fetch_performance_data,
     fetch_team_betting_data, fetch_teams, fetch_transfer_data,
     fetch_players, fetch_player_picks_from_raw, fetch_player_gameweek_points,
     fetch_current_gameweek, fetch_manager_teams, fetch_fixtures,
     get_team_color, create_team_badge
 )
-from .tabs import (
+from tabs import (
     leaderboard, performance_trends, transfer_analysis,
     managers_favorites, fun_facts, formation_analysis, fixture_odds_analysis
 )
