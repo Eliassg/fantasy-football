@@ -274,29 +274,86 @@ CUSTOM_CSS = """
         color: var(--accent-secondary) !important;
     }
     
-    /* Data Tables */
-    .dataframe {
+    /* Data Tables - Streamlit dataframe and table components */
+    .dataframe,
+    [data-testid="stDataFrame"],
+    [data-testid="stTable"] {
         border-radius: 12px;
         overflow: hidden;
-        background: var(--bg-card);
+        background: var(--bg-card) !important;
         border: 1px solid var(--border-subtle);
     }
     
-    .dataframe th {
-        background: var(--bg-tertiary) !important;
-        color: var(--text-primary) !important;
-        font-weight: 600;
-        border-bottom: 1px solid var(--border-subtle) !important;
-    }
-    
-    .dataframe td {
+    /* Dataframe container */
+    [data-testid="stDataFrame"] > div {
         background: var(--bg-card) !important;
-        color: var(--text-secondary) !important;
-        border-bottom: 1px solid var(--border-subtle) !important;
     }
     
-    .dataframe tr:hover td {
-        background: var(--bg-hover) !important;
+    /* Dataframe iframe and glide-data-grid */
+    [data-testid="stDataFrame"] iframe {
+        background: var(--bg-card) !important;
+    }
+    
+    /* Target the actual data grid cells */
+    .dvn-scroller,
+    .glideDataEditor {
+        background: var(--bg-card) !important;
+    }
+    
+    /* Standard table elements */
+    .dataframe th,
+    [data-testid="stTable"] th,
+    table th {
+        background: #1a1a24 !important;
+        color: #f0f0f5 !important;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+    
+    .dataframe td,
+    [data-testid="stTable"] td,
+    table td {
+        background: #16161f !important;
+        color: #a0a0b0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    }
+    
+    .dataframe tr:hover td,
+    [data-testid="stTable"] tr:hover td,
+    table tr:hover td {
+        background: #1f1f2a !important;
+    }
+    
+    /* Streamlit table styling */
+    .stTable {
+        background: var(--bg-card) !important;
+    }
+    
+    .stTable table {
+        background: var(--bg-card) !important;
+    }
+    
+    /* Element container background for tables */
+    [data-testid="stDataFrame"] [data-testid="StyledLinkIconContainer"],
+    [data-testid="stDataFrameResizable"] {
+        background: var(--bg-card) !important;
+    }
+    
+    /* Column header styling */
+    [data-testid="stDataFrame"] [role="columnheader"] {
+        background: #1a1a24 !important;
+        color: #f0f0f5 !important;
+    }
+    
+    /* Cell styling */
+    [data-testid="stDataFrame"] [role="gridcell"] {
+        background: #16161f !important;
+        color: #a0a0b0 !important;
+    }
+    
+    /* Pandas styler tables */
+    .stDataFrame > div > div > div {
+        background: var(--bg-card) !important;
     }
     
     /* Buttons */
